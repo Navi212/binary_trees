@@ -30,32 +30,6 @@ typedef struct binary_tree_s avl_t;
 /*For Max Binary Heap*/
 typedef struct binary_tree_s heap_t;
 
-
-/* Original code from http://stackoverflow.com/a/13755911/5184480 */
-
-/**
- * print_t - Stores recursively each level in an array of strings
- *
- * @tree: Pointer to the node to print
- * @offset: Offset to print
- * @depth: Depth of the node
- * @s: Buffer
- *
- * Return: length of printed tree after process
- */
-/*static int print_t(const binary_tree_t *tree, int offset, int depth, char **s);*/
-
-
-/**
- * _height - Measures the height of a binary tree
- *
- * @tree: Pointer to the node to measures the height
- *
- * Return: The height of the tree starting at @node
- */
-/*static size_t _height(const binary_tree_t *tree);*/
-
-
 /**
  * binary_tree_print - Prints a binary tree
  *
@@ -63,6 +37,7 @@ typedef struct binary_tree_s heap_t;
  */
 void binary_tree_print(const binary_tree_t *tree);
 void binary_tree_print(const binary_tree_t *);
+
 /*Main Task functions*/
 binary_tree_t *binary_tree_node(binary_tree_t *parent, int value);
 binary_tree_t *binary_tree_insert_left(binary_tree_t *parent, int value);
@@ -83,9 +58,11 @@ int binary_tree_is_full(const binary_tree_t *tree);
 binary_tree_t *binary_tree_sibling(binary_tree_t *node);
 binary_tree_t *binary_tree_uncle(binary_tree_t *node);
 bst_t *array_to_bst(int *array, size_t size);
+bst_t *bst_insert(bst_t **tree, int value);
 
 /*Helper functions*/
 int binary_tree_is_leaf(const binary_tree_t *node);
 int b_height(const binary_tree_t *tree);
+bst_t *find_parent_node(bst_t *tree, int value);
 
 #endif /* _BINARY_TREES_H_ */
